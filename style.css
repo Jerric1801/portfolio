@@ -1,0 +1,164 @@
+:root {
+    /* color palette */
+    --clubNavy: #2A3B49;
+    --greatHarbor: #2C3D56;
+    --malletWhite: #DFE6DD;
+    --beige: #E6DFDA;
+    --gold: #BD9F71;
+    --white: #fff;
+    --grey: #c3c3c3;
+}
+
+@font-face {
+    font-family: nimbus;
+    src: url('/static/fonts/NimbusSanL-Reg.otf');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--beige);
+  }
+
+::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+
+main {
+    width : 100%;
+    position : fixed;
+    margin: 0;
+    padding: 0;
+}
+
+main > div {
+    scroll-snap-type: both mandatory;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#work-kanban {
+    list-style-type:none;
+    width: 1200px; 
+    max-height: 500px; /* Fixed height to limit rows */
+    display: grid; 
+    grid-template-rows: repeat(2, 250px); 
+    grid-template-columns: repeat(4, 250px);
+    grid-gap: 20px;
+  }
+
+
+.rect-widget {
+    width: 500px;
+    height: 250px;
+    border-radius: 20px !important;
+    grid-column: span 2;
+    /* box-shadow: inset 0px 0px 0px 2px black; */
+}
+
+.square-widget {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #2A3B49;
+}
+
+.home {
+    background-color: var(--beige);
+    height: 100vh;
+}
+
+.works {
+    background-color: var(--malletWhite);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stock-widget {
+    background-color: black;
+    color: var(--white);
+    font-family: nimbus;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stock {
+    width: 95%;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.stock:not(:last-child) {
+    border-bottom: 1px solid var(--grey);
+}
+
+.stock_ticker {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.1em;
+}
+
+/* title */
+.stock_ticker p:first-child {
+    font-size: 1em;
+    color: var(--white);
+    font-weight: 1000;
+}
+
+/* description */
+.stock_ticker p:last-child {
+    font-size: 0.8em;
+    color: var(--grey);
+}
+
+.stock_graph {
+    width: 25%;
+    overflow: hidden;
+}
+
+    .stock_graph svg {
+        width: 100%;
+        height: 100%;
+    }
+
+.stock_price {
+    width: 25%;
+}
+
+.map-widget {
+    overflow:scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(10, 133, 255);
+    grid-row: span 2;
+}
+
+#map {
+    /* width: auto;
+    height: auto; */
+    border-radius: 20px;
+    transform: translateX(200px) translateY(100px);
+}
+
+.contact {
+    background-color: var(--clubNavy);
+    height: 50vh;
+}
+
