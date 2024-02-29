@@ -21,7 +21,7 @@
     --birthin-pri: #AEB9B8;
 
     /*stock*/
-    --birthin-pri: #AEB9B8;
+    --stock-pri: #242725;
 }
 
 @font-face {
@@ -96,6 +96,8 @@ p {
     grid-gap: 20px;
     min-height:0;
     min-width:0;
+    margin: 0;
+    padding: 0;
   }
 
 
@@ -123,17 +125,18 @@ p {
 /* STOCK WIDGET */
 
 .stock-widget {
-    background-color: rgb(17, 34, 58);
+    background-color: var(--stock-pri);
     color: var(--white);
     font-family: nimbus;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    letter-spacing: 0.04em;
 }
 
 .stock {
-    width: 95%;
+    width: 90%;
     height: 33%;
     display: flex;
     flex-direction: row;
@@ -142,7 +145,7 @@ p {
 }
 
 .stock:not(:last-child) {
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 0.4px solid var(--grey);
 }
 
 .stock_ticker {
@@ -152,11 +155,12 @@ p {
     justify-content: center;
     align-items: flex-start;
     gap: 0.1em;
+    margin-right: 2%;
 }
 
     /* title */
 .stock_ticker p:first-child {
-    font-size: 1em;
+    font-size: 1.1em;
     color: var(--white);
     font-weight: 1000;
 }
@@ -169,6 +173,7 @@ p {
 
 .stock_graph {
     width: 25%;
+    object-fit: cover;
     overflow: hidden;
 }
 
@@ -177,8 +182,23 @@ p {
         height: 100%;
     }
 
+
+
+
 .stock_price {
-    width: 25%;
+    width: 15%;
+    text-align: right;
+}
+
+.stock_price p:first-child {
+    font-size: 1.1em;
+    color: var(--white);
+    font-weight: 1000;
+}
+
+.stock_price p:last-child {
+    font-size: 0.8em;
+    color: var(--white);
 }
 
 /* MAP WIDGET */

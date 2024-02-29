@@ -47,7 +47,7 @@ class MapWidget {
                 });
                 this.ctx.closePath();
                 this.ctx.stroke();
-                this.ctx.fillStyle = '#C4C8CB'; // Set fill color with alpha (e.g., semi-transparent red)
+                this.ctx.fillStyle = '#f3f3f3'; // Set fill color with alpha (e.g., semi-transparent red)
                 this.ctx.fill(); // Fill the shape
             
             }
