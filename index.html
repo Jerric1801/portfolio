@@ -15,20 +15,12 @@
         <main id="main">
 
             <div class="home">
-                Mood (wellness app)
-                Brainhack (camera)
-                Unblock (geo)
-                China Markets (finance)
-                CMPN (finance)
-                Mapping Buddy (calendar)
-                GIS (geo)
-                birthin (business app)
 
             </div>
             <div class="works">
                 <ul id = "work-kanban" class = "droppable">
 
-                    <li class = "rect-widget stock-widget ui-state-default">
+                    <li class = "rect-widget stock-widget draggable">
                         <div class = "stock">
                             <div class = "stock_ticker">
                                 <p>CMC</p>
@@ -67,23 +59,25 @@
                         </div>
                     </li>
 
-                    <li class = "square-widget ui-state-default">
-
+                    <li class = "square-widget draggable wellness-widget">
+                        <img src = "static/images/mood_logo.png">
                     </li>
 
-                    <li class = "square-widget ui-state-default">
-                        
-                    </li>
-
-                    <li class = "square-widget ui-state-default">
-                        
-                    </li>
-
-                    <li class = "square-widget ui-state-default">
-                        
+                    <li class = "square-widget draggable calendar-widget">
+                        <img src = "static/images/mapping_buddy.png">
                     </li>
                     
-                    <li class = "rect-widget map-widget ui-state-default">
+                    
+                    <li class = "square-widget draggable business-widget">
+                        <img src = "static/images/birthin.png">
+                    </li>
+
+                    <li class = "square-widget draggable camera-widget">
+                        <img src = "static/images/xrperience_logo.png">
+                    </li>
+                    
+                    
+                    <li class = "rect-widget map-widget draggable">
                         <canvas id="map" width = "1000" height="500"></canvas>
                     </li>
                 </div>
@@ -95,7 +89,7 @@
 
         </main>
         <!-- widgets -->
-        <script type = "module" src = "src/scripts/widgets.js"></script>
+        <script type = "module" src = "src/scripts/stocks.js"></script>
         <!-- kanban -->
         <script type = "module" src = "src/scripts/kanban.js"></script>
     </body>

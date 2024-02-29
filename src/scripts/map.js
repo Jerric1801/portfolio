@@ -2,7 +2,7 @@
 
 class MapWidget {
     //canvas settings
-    water_color = "rgb(10, 133, 255)"
+    water_color = "#2A3B49"
     canvas_width = 1000;
     canvas_height = 500;
     x_origin = 0;
@@ -47,7 +47,7 @@ class MapWidget {
                 });
                 this.ctx.closePath();
                 this.ctx.stroke();
-                this.ctx.fillStyle = 'rgb(34,139,34)'; // Set fill color with alpha (e.g., semi-transparent red)
+                this.ctx.fillStyle = '#C4C8CB'; // Set fill color with alpha (e.g., semi-transparent red)
                 this.ctx.fill(); // Fill the shape
             
             }
