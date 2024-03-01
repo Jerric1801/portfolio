@@ -1,95 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel = "stylesheet" href = "./style.css">
-        <!-- jquery CDNs -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-        <script type = "module" src = "/src/scripts/main.js"></script>
-        <script src='/src/scripts/map.js'></script>
-    </head>
-    <body>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <!-- jquery CDNs -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script src='/src/scripts/map.js'></script>
+</head>
+
+<body>
+    <nav>
+
+    </nav>
+    <main id="main">
         <nav>
-
+            <ul>
+                <li>About Me</li>
+                <li>Projects</li>
+                <li>Contact Me</li>
+            </ul>
         </nav>
-        <main id="main">
+        <div class="home">
+            <h1> Hi I'm Jerric </h1>
+            <p> <b> J </b> oyfully </p>
+            <p> <b> E </b> xcited </p>
+            <p> <b> R </b> eally </p>
+            <p> <b> R </b> esourceful </p>
+            <p> <b> I </b> ncredible </p>
+            <p> <b> C </b> oder </p>
+        </div>
+        <div class="works">
+            <ul id="work-kanban" class="droppable">
 
-            <div class="home">
-
-            </div>
-            <div class="works">
-                <ul id = "work-kanban" class = "droppable">
-
-                    <li class = "rect-widget stock-widget draggable">
-                        <div class = "stock">
-                            <div class = "stock_ticker">
-                                <p>CMC</p>
-                                <p>Regression Analysis</p>
-                            </div>
-                            <div class = "stock_graph">
-                                
-                            </div>
-                            <div class = "stock_price">
-                                
-                            </div>
+                <li class="rect-widget stock-widget draggable">
+                    <div class="stock">
+                        <div class="stock_ticker">
+                            <p>CMC</p>
+                            <p>Regression Analysis</p>
                         </div>
-                        <div class = "stock">
-                            <div class = "stock_ticker">
-                                <p>CMPN</p>
-                                <p>Financial Companion</p>
-                            </div>
-                            <div class = "stock_graph">
-                                
-                            </div>
-                            <div class = "stock_price">
-                                
-                            </div>
+                        <div class="stock_graph">
+
                         </div>
-                        <div class = "stock">
-                            <div class = "stock_ticker">
-                                <p>VTI</p>
-                                <p>Vanguard Total Stock Market</p>
-                            </div>
-                            <div class = "stock_graph">
-                                
-                            </div>
-                            <div class = "stock_price">
-                                
-                            </div>
+                        <div class="stock_price">
+
                         </div>
-                    </li>
+                    </div>
+                    <div class="stock">
+                        <div class="stock_ticker">
+                            <p>CMPN</p>
+                            <p>Financial Companion</p>
+                        </div>
+                        <div class="stock_graph">
 
-                    <li class = "square-widget draggable calendar-widget">
-                        <img src = "static/images/mapping_buddy.png">
-                    </li>
-                    
-                    <li class = "square-widget draggable wellness-widget">
-                        <img src = "static/images/mood_logo.png">
-                    </li>
-                    
-                    <li class = "square-widget draggable business-widget">
-                        <img src = "static/images/birthin.png">
-                    </li>
+                        </div>
+                        <div class="stock_price">
 
-                    <li class = "square-widget draggable camera-widget">
-                        <img src = "static/images/xrperience_logo.png">
-                    </li>
-                    
-                    
-                    <li class = "rect-widget map-widget draggable">
-                        <canvas id="map" width = "1000" height="500"></canvas>
-                    </li>
-                </div>
-            </div>
-            <div class="contact">
+                        </div>
+                    </div>
+                    <div class="stock">
+                        <div class="stock_ticker">
+                            <p>VTI</p>
+                            <p>Vanguard Total Stock Market</p>
+                        </div>
+                        <div class="stock_graph">
 
-            </div>
+                        </div>
+                        <div class="stock_price">
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="square-widget draggable calendar-widget">
+                    <img src="static/images/mapping_buddy.png">
+                </li>
+
+                <li class="square-widget draggable wellness-widget">
+                    <img src="static/images/mood_logo.png">
+                </li>
+
+                <li class="square-widget draggable business-widget">
+                    <img src="static/images/birthin.png">
+                </li>
+
+                <li class="square-widget draggable camera-widget">
+                    <img src="static/images/xrperience_logo.png">
+                </li>
 
 
-        </main>
-        <!-- widgets -->
-        <script type = "module" src = "src/scripts/stocks.js"></script>
-        <!-- kanban -->
-        <script type = "module" src = "src/scripts/kanban.js"></script>
-    </body>
+                <li class="rect-widget map-widget draggable">
+                    <canvas id="map" width="1000" height="500"></canvas>
+                </li>
+        </div>
+        </div>
+        <div class="contact">
+
+        </div>
+
+
+    </main>
+    <!-- widgets -->
+    <script type="module" src="src/scripts/stocks.js"></script>
+    <!-- kanban -->
+    <script type="module" src="src/scripts/kanban.js"></script>
+</body>
+
 </html>

@@ -62,6 +62,29 @@ p {
 }
 
 /* ----------------------------------------
+   NAV
+   ---------------------------------------- */
+
+nav {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ----------------------------------------
    INTRODUCTION
    ---------------------------------------- */
 
