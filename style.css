@@ -29,6 +29,17 @@
     src: url('/static/fonts/NimbusSanL-Reg.otf');
 }
 
+@font-face {
+    font-family: caviar;
+    src: url('/static/fonts/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+    font-family: grotesk;
+    src: url('/static/fonts/SpaceGrotesk-Medium.otf');
+}
+
+
 
 /* ----------------------------------------
    TAGS
@@ -37,7 +48,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--beige);
+    background-color: var(--white);
+    font-family: caviar;
   }
 
 ::-webkit-scrollbar { 
@@ -56,9 +68,26 @@ main > div {
     scroll-snap-type: both mandatory;
 }
 
+h1 {
+    font-family: grotesk;
+}
+
+h2 {
+    font-family: grotesk;
+}
+
 p {
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--clubNavy)
 }
 
 /* ----------------------------------------
@@ -90,8 +119,26 @@ nav ul {
 
 
 .home {
-    background-color: var(--beige);
+    background-color: var(--white);
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-intro {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-links {
+    width: 30vh;
+    height: 10vh;
+}
+
+.home-links img{
+    width: 15%;
 }
 
 /* ----------------------------------------
@@ -106,6 +153,19 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#works-popup {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    /* margin-left: 10vw;
+    margin-top: 10vw; */
+    background-color: #FFFFFF;
+    border:1px solid var(--clubNavy);
+    border-radius: 20px;
 }
 
 
@@ -123,6 +183,8 @@ nav ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 25px;
   }
 

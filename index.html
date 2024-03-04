@@ -11,27 +11,32 @@
 </head>
 
 <body>
-    <nav>
-
-    </nav>
     <main id="main">
         <nav>
             <ul>
-                <li>About Me</li>
-                <li>Projects</li>
-                <li>Contact Me</li>
+                <li><a href="#home-section">About Me</a></li>
+                <li><a href="#works-section">Projects</a></li>
+                <li><a href="#contact-section">Contact Me</a></li>
             </ul>
         </nav>
-        <div class="home">
-            <h1> Hi I'm Jerric </h1>
-            <p> <b> J </b> oyfully </p>
-            <p> <b> E </b> xcited </p>
-            <p> <b> R </b> eally </p>
-            <p> <b> R </b> esourceful </p>
-            <p> <b> I </b> ncredible </p>
-            <p> <b> C </b> oder </p>
+        <!-- end absolute items -->
+        <div class="home" id="home-section">
+            <div class="home-intro">
+                <h1> Hi I'm Jerric</h1>
+                <p> I am passionate about coding and software and i need to find an internship</p>
+                <div class="home-links">
+                    <a target="_blank" href="https://www.github.com/Jerric1801"><img src="static/images/github-logo.png"
+                            alt="Github Logo"></a>
+                    <a>Resume</a>
+                </div>
+            </div>
         </div>
-        <div class="works">
+        <div class="works" id="works-section">
+                    <!-- absolute items -->
+        <div id="works-popup">
+            <p id="popup-back"><- back</p>
+        </div>
+
             <ul id="work-kanban" class="droppable">
 
                 <li class="rect-widget stock-widget draggable">
@@ -95,13 +100,13 @@
                 </li>
         </div>
         </div>
-        <div class="contact">
+        <div class="contact" id="contact-section">
 
         </div>
 
 
     </main>
-    <!-- widgets -->
+    <!-- stocks -->
     <script type="module" src="src/scripts/stocks.js"></script>
     <!-- kanban -->
     <script type="module" src="src/scripts/kanban.js"></script>

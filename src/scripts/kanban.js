@@ -22,6 +22,19 @@ class kanban {
     init_drag() {
         this.draggables.each((index, drag_item)=>{
             this.apply_drag(drag_item);
+            this.bind_popup(drag_item)
+        })
+    }
+    bind_popup(item) {
+        const backButton = $("#popup-back")
+        const popup = $("#works-popup")
+
+        $(item).on("click", function(){
+            popup.css("display", "flex")
+        })
+
+        backButton.on("click", function() {
+            popup.css("display", "none")
         })
     }
     apply_drag(drag_item) {
