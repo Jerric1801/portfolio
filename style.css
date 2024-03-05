@@ -91,6 +91,15 @@ a:visited {
 }
 
 /* ----------------------------------------
+   JS
+   ---------------------------------------- */
+
+
+.no-scroll {
+    overflow: hidden;  
+}
+
+/* ----------------------------------------
    NAV
    ---------------------------------------- */
 
@@ -100,7 +109,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
     z-index: 1;
 }
 
@@ -111,6 +120,7 @@ nav ul {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    margin-right: 5vw;
 }
 
 /* ----------------------------------------
@@ -127,19 +137,51 @@ nav ul {
 }
 
 .home-intro {
-    max-width: 1200px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.home-image {
+    background-color: #222222;
+    width: 175px;
+    height: 175px;
+    border-radius: 100%;
 }
 
 .home-links {
-    width: 30vh;
+    width: 100%;
     height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 5%;
 }
 
-.home-links img{
-    width: 15%;
+.home-links-stack {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+.home-links-stack a {
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+} 
+
+.home-links-stack img{
+    height: 60%;
+    object-fit: contain;
+}
+
 
 /* ----------------------------------------
    WORKS - KANBAN BOARD
@@ -172,7 +214,7 @@ nav ul {
 #work-kanban {
     list-style-type:none;
     max-width: 1200px; 
-    max-height: 600; /* Fixed height to limit rows */
+    max-height: 600px; /* Fixed height to limit rows */
     /* display: grid; 
     grid-template-rows: repeat(1, minmax(0,250px)); 
     grid-template-columns: repeat(4, minmax(0,250px));
@@ -305,6 +347,19 @@ nav ul {
     height: auto; */
     border-radius: 20px;
     transform: translateX(200px) translateY(100px);
+}
+
+.map-button {
+    background-color: #222222;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius : 100%;
+    z-index: 2;
+    opacity: 0.8;
+    font-size: 2em;
+    color: white;
+    border: none;
 }
 
 /* MOOD WIDGET */

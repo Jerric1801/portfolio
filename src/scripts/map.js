@@ -19,13 +19,36 @@ class MapWidget {
 
     constructor(){
         this.canvas = document.getElementById('map')
+        this.buttons = document.getElementsByClassName("map-button")
+
         if (this.canvas.getContext) {
             this.ctx = this.canvas.getContext('2d')
         }
-
         this.build()
+        this.init_buttons()
     }
-
+    init_buttons() {
+        for (let index in this.buttons) {
+            var button = this.buttons[index]
+            console.log(button)
+            var direction = button.textContent.trim()
+            console.log(direction)
+            var mapWidth = 500
+            var mapHeight = 250
+            if (direction == "<"){
+                button.style.marginLeft= `-${mapWidth -25}px`
+            }
+            else if (direction == ">"){
+                button.style.marginLeft= `${mapWidth- 25}px`
+            }
+            else if (direction == "^"){
+                button.style.marginTop= `-${mapHeight - 65}px`
+            }
+            else {
+                button.style.marginTop= `${mapHeight - 50}px`
+            }
+        }
+    }
     draw_map_background() {
         this.ctx.fillStyle = this.water_color;
         this.ctx.fillRect(this.x_origin, this.y_origin, (this.x_origin + this.canvas_width), this.y_origin + this.canvas_height)

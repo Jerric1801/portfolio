@@ -6,8 +6,36 @@ function calculateIntersectionArea(rect1, rect2) {
     return overlapArea;
 }
 
-class kanban {
+function hasClassInArray(item, classArray) {
+    // Use the classList property to access an item's classes
+    for (const className of item.classList) {
+      if (classArray.includes(className)) {
+        return true;
+      }
+    }
+    return false;
+  }
 
+  function disableScrolling() {
+    const popupRect = document.getElementById("works-popup").getBoundingClientRect();
+    const targetScrollX = window.scrollX + popupRect.left;
+    const targetScrollY = window.scrollY + popupRect.top; 
+
+    // Smooth scrolling option
+    window.scrollTo({
+        top: targetScrollY,
+        left: targetScrollX,
+        behavior: 'smooth'
+    });
+    document.body.classList.add('no-scroll');
+}
+
+function enableScrolling() {
+    document.body.classList.remove('no-scroll');
+}
+
+class kanban {
+    big_widgets = ["map-widget", "stock-widget"]
     position = null
 
     constructor() {
@@ -24,18 +52,23 @@ class kanban {
             this.apply_drag(drag_item);
             this.bind_popup(drag_item)
         })
+
     }
     bind_popup(item) {
-        const backButton = $("#popup-back")
         const popup = $("#works-popup")
+        const backButton = $("#popup-back")
 
-        $(item).on("click", function(){
-            popup.css("display", "flex")
-        })
-
-        backButton.on("click", function() {
-            popup.css("display", "none")
-        })
+        if (!hasClassInArray(item, this.big_widgets)){
+            $(item).on("click", function(){
+                popup.css("display", "flex")
+                disableScrolling()
+            })
+            backButton.on("click", function() {
+                popup.css("display", "none")
+                enableScrolling()
+            })
+        }
+        
     }
     apply_drag(drag_item) {
         $(drag_item).draggable({
@@ -97,7 +130,6 @@ class kanban {
         return mostIntersected;
     }
     valid_drop(dragIndex, intersectIndex){
-        const big_widgets = ["map-widget", "stock-widget"]
         //SPLIT BY ROWS, IF THE RESULTING POSITIONS HAVE 2 BIG WIDGETS IN ONE HALF - THAT ARE NOT 01 OR 56, DISALLOW
         // if (big_widgets.includes())
         console.log(dragIndex)
