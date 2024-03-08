@@ -28,11 +28,10 @@ class MapWidget {
         this.init_buttons()
     }
     init_buttons() {
-        for (let index in this.buttons) {
+        for (let index = 0 ; index < 4; index ++) {
             var button = this.buttons[index]
-            console.log(button)
-            var direction = button.textContent.trim()
-            console.log(direction)
+            var content = button.textContent
+            var direction = content.trim()
             var mapWidth = 500
             var mapHeight = 250
             if (direction == "<"){

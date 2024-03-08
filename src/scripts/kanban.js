@@ -1,3 +1,5 @@
+import {build_project} from "./projects.js";
+
 // use jquery for this class
 function calculateIntersectionArea(rect1, rect2) {
     const xOverlap = Math.max(0, Math.min(rect1.left + rect1.width, rect2.left + rect2.width) - Math.max(rect1.left, rect2.left));
@@ -61,6 +63,8 @@ class kanban {
         if (!hasClassInArray(item, this.big_widgets)){
             $(item).on("click", function(){
                 popup.css("display", "flex")
+                let project = $(this).attr("data-project")
+                build_project(project)
                 disableScrolling()
             })
             backButton.on("click", function() {
