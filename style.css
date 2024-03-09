@@ -328,7 +328,6 @@ nav ul {
 
 #map {
     border-radius: 20px;
-    /* transform: translateX(200px) translateY(100px); */
 }
 
 .map-button {
@@ -410,8 +409,6 @@ nav ul {
     height: 100vh;
     z-index: 10;
     position: fixed;
-    /* margin-left: 10vw;
-    margin-top: 10vw; */
     background-color: #FFFFFF;
     flex-direction: column;
 }
@@ -419,7 +416,6 @@ nav ul {
 #popup-content {
     width: 100%;
     height: 100vh;
-    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -428,10 +424,11 @@ nav ul {
 }
 
 #popup-back {
-    height: 5vh;
-    width: 20vw;
+    height: 10vh;
+    width: 15vw;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: fixed;
     font-size: 1.2rem;
 }
@@ -449,13 +446,70 @@ nav ul {
     margin-top: 5vh;
 }
 
-.popup-project-container {
-    width: 100%;
+/* intro container */
+.popup-project-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
-.popup-project-container img {
-    max-width: 70%;
+.popup-project-intro img {
+    width: 35%;
 }
+
+/* general layout */
+.popup-default {
+    height: auto;
+    width: 80%;
+    display:flex;
+}
+
+/* layout 1 */
+.popup-default-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-default-1 img{
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* layout 2 */
+.popup-default-2 {
+    flex-direction: column;
+}
+
+/* layout 3 */
+.popup-default-3 {
+    flex-direction: column;
+}
+
+.left {
+    text-align: left
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.popup-description {
+    width: 50%;
+}
+
+.wide {
+    width: 70%;
+}
+
 
 /* ----------------------------------------
    FOOTER - CONTACT ME
