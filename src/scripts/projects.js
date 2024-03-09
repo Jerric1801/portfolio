@@ -124,36 +124,64 @@ const project_mapper =
 {"mapping_buddy": {
     "name": "Mapping Buddy",
     "sections": {
-        "intro": ["mapping_buddy.png", "SMU Module IS201 Interaction Design Prototyping * HTML, CSS, Javascript, Jquery UI * Frustrated with unintuitive tools and scattered information, SMU students struggle to effectively plan their modules. My team designed Mapping Buddy, a web application that simplifies course sequence planning. It offers a streamlined user experience, potentially saving students countless hours of hassle" ],
-        "layout_1": ["overview.png", "" ]
+        "intro": ["mapping_buddy.png", "Year 2 SMU Module IS211 Interaction Design Prototyping * HTML | CSS | Javascript | Jquery UI * Frustrated with unintuitive tools and scattered information, SMU students struggle to effectively plan their modules. My team designed Mapping Buddy, a web application that simplifies course sequence planning. It offers a streamlined user experience, potentially saving students countless hours of hassle" ],
+        "layout_1": ["overview.png"], 
+        "layout_2": ["CU.png" , "We were initially tasked with creating Figma designs, but we recognized the potential to enhance the prototype's functionality and user experience. We incorporated jQuery UI to implement a dynamic Kanban board, a key component of the design. Despite the technical complexity and a tight 3-4 week deadline, we successfully delivered a more interactive and realistic prototype. This prototype included functionality such as a CU tracker, tabs and module search"]
     }
 },
 "birthin": {
     "name": "birthin co.",
     "sections": {
-        "intro": ["birthin.png", "SMU Module IS201 Interaction Design Prototyping * HTML, CSS, Javascript * Mapping Buddy is a project that was done in school" ],
+        "intro": ["birthin.png", "Passion Project * Entrepreneurship | Branding | Web Design * Artisanal Elevation. A focus on branding, web design & development, and all things else in helping you build your online presence. \n Birthin Co. was created to craft unique identities that make businesses stand out. As a Web Designer and Developer for this budding start-up, my aim was to be an artisan in the competitive world of B2B. With fully customizable pages that are built from scratch, we stand out by bringing personality to each project." ],
+        "layout_1": ["birthin_mockup.png"], 
     }
 },
 "mood": {
     "name": "mood",
     "sections": {
-        "intro": ["mood_logo.png", "SMU Module IS113 Sensors and IOT<br>HTML, CSS, Javascript * Mapping Buddy is a project that was done in school" ],
+        "intro": ["mood_logo.png", "Year 1 SMU Module IS113 Sensors and IOT * React Native | Flask | Expo | MongoDB * Mood is a mobile application that is built to help SMU students with their mental health" ],
+        "layout_3": ["landing_page.png", "The project was "]
     }
 },
 "gis": {
     "name": "Derna Deluge Dorsier",
+    "sections": {
+        "intro": ["mapping_buddy.png", "Year 2 SMU Module SMT201 Geographical Information Systems" ],
+        "layout_1": ["overview.png"],
+        "layout_2": ["overview.png"]
+    }
 },
 "unblock": {
     "name": "Unblock",
+    "sections": {
+        "intro": ["mapping_buddy.png", "" ],
+        "layout_1": ["overview.png"],
+        "layout_2": ["overview.png"]
+    }
 },
 "xrperience": {
     "name": "XRperience",
+    "sections": {
+        "intro": ["mapping_buddy.png", "" ],
+        "layout_1": ["overview.png"],
+        "layout_2": ["overview.png"]
+    }
 },
 "cmc": {
-    "name": "CMC"
+    "name": "CMC",
+    "sections": {
+        "intro": ["mapping_buddy.png", "" ],
+        "layout_1": ["overview.png"],
+        "layout_2": ["overview.png"]
+    }
 },
 "cmpn": {
-    "name": "Companion"
+    "name": "Companion",
+    "sections": {
+        "intro": ["mapping_buddy.png", "" ],
+        "layout_1": ["overview.png"],
+        "layout_2": ["overview.png"]
+    }
 }
 }
 
