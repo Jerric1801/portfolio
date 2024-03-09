@@ -1,5 +1,4 @@
 class Project {
-
     name;
     image_path = "./static/images/";
     images;
@@ -109,6 +108,12 @@ const project_mapper =
 "xrperience": {
     "name": "XRperience",
 },
+"cmc": {
+    "name": "CMC"
+},
+"cmpn": {
+    "name": "Companion"
+}
 }
 
 
@@ -119,7 +124,7 @@ export function build_project(attr) {
 
     }
     catch {
-        console.log("project does not exist")
+        console.log("Error in project.js")
     }
 }
 

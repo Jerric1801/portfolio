@@ -257,6 +257,10 @@ nav ul {
     justify-content: center;
 }
 
+.stock:hover {
+    cursor: pointer;
+}
+
 .stock:not(:last-child) {
     border-bottom: 0.4px solid var(--grey);
 }
@@ -294,9 +298,6 @@ nav ul {
         width: 100%;
         height: 100%;
     }
-
-
-
 
 .stock-price {
     width: 15%;

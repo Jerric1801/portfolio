@@ -13,9 +13,10 @@ class stockWidget {
     constructor() {
         this.construct_widget()
         this.generate_graphs()
-        this.bind_click()
+        this.bind_project()
     }
     construct_widget() {
+        let count = 0
         for (const key in this.stock_items) {
             let stockCon = document.createElement("div");
             let tickerCon = document.createElement("div")
@@ -23,6 +24,7 @@ class stockWidget {
             let priceCon = document.createElement("div")
 
             stockCon.className = "stock";
+            stockCon.dataset.index = count
             tickerCon.className = "stock-ticker"
             graphCon.className = "stock-graph"
             priceCon.className = "stock-price"
@@ -45,7 +47,7 @@ class stockWidget {
             stockCon.append(priceCon)
 
             this.stock.append(stockCon)
-
+            count++ 
         }
     }
     generate_graphs() {
@@ -117,6 +119,19 @@ class stockWidget {
 
             priceitem.appendChild(price_container)
 
+        }
+    }
+    bind_project() {
+        const stocks = document.getElementsByClassName("stock")
+        const values = Object.keys(this.stock_items)
+        for (const stock of stocks) {
+            stock.addEventListener("click", function(){
+                let index = this.dataset.index
+                if (index == 0 || index == 1) {
+                    const project = values[index]
+                    build_project(project)
+                }
+            })
         }
     }
 }
