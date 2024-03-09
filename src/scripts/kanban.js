@@ -18,23 +18,6 @@ function hasClassInArray(item, classArray) {
     return false;
   }
 
-  function disableScrolling() {
-    const popupRect = document.getElementById("works-popup").getBoundingClientRect();
-    const targetScrollX = window.scrollX + popupRect.left;
-    const targetScrollY = window.scrollY + popupRect.top; 
-
-    // Smooth scrolling option
-    window.scrollTo({
-        top: targetScrollY,
-        left: targetScrollX,
-        behavior: 'smooth'
-    });
-    document.body.classList.add('no-scroll');
-}
-
-function enableScrolling() {
-    document.body.classList.remove('no-scroll');
-}
 
 class kanban {
     big_widgets = ["map-widget", "stock-widget"]
@@ -57,22 +40,13 @@ class kanban {
 
     }
     bind_popup(item) {
-        const popup = $("#works-popup")
-        const backButton = $("#popup-back")
-
+    //binds only small widgets
         if (!hasClassInArray(item, this.big_widgets)){
             $(item).on("click", function(){
-                popup.css("display", "flex")
                 let project = $(this).attr("data-project")
                 build_project(project)
-                disableScrolling()
-            })
-            backButton.on("click", function() {
-                popup.css("display", "none")
-                enableScrolling()
             })
         }
-        
     }
     apply_drag(drag_item) {
         $(drag_item).draggable({

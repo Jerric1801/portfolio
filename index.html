@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script type="module" src="/src/scripts/main.js"></script>
-    <script src='/src/scripts/map.js'></script>
+    <script type="module" src='/src/scripts/map.js'></script>
 </head>
 
 <body>
@@ -26,11 +26,7 @@
                     <img src="">
                 </div>
                 <h1> Hi I'm Jerric</h1>
-                <p>I'm a Singapore-based student pursuing a Bachelor of Science in Information Systems, specializing in
-                    Smart City technology. My passion lies in harnessing technology to create systems that improve
-                    lives. I aspire to be an entrepreneur, building businesses that put innovation at the service of
-                    social good. With skills in both front-end and back-end development and a familiarity with QGIS, I'm
-                    a problem-solver and team player ready to learn and contribute.</p>
+                <p>I'm a Singapore-based student pursuing a Bachelor of Science in Information Systems, specializing in Smart City technology. My passion lies in harnessing technology to create systems that improve lives. I aspire to be an entrepreneur, building businesses that put innovation at the service of social good. With skills in both front-end and back-end development and a familiarity with QGIS, I'm a problem-solver and team player ready to learn and contribute.</p>
                 <div class="home-links">
                     <div class="home-links-stack">
                         <a target="_blank" href="https://www.github.com/Jerric1801">
@@ -51,7 +47,8 @@
             <!-- absolute items -->
             <div id="works-popup">
                 <div id="popup-back">
-                    <p>< back to projects</p>
+                    <p>
+                        < back to projects</p>
                 </div>
                 <div id="popup-content">
                 </div>
@@ -59,8 +56,8 @@
 
             <ul id="work-kanban" class="droppable">
 
-                <li class="rect-widget stock-widget draggable">
-                    <div class="stock">
+                <li class="rect-widget stock-widget draggable" id = "stocks">
+                    <!-- <div class="stock">
                         <div class="stock_ticker">
                             <p>CMC</p>
                             <p>Regression Analysis</p>
@@ -95,7 +92,7 @@
                         <div class="stock_price">
 
                         </div>
-                    </div>
+                    </div> -->
                 </li>
 
                 <li class="square-widget draggable calendar-widget" data-project="mapping_buddy">
@@ -116,18 +113,11 @@
 
 
                 <li class="rect-widget map-widget draggable">
-                    <button class="map-button">
-                        < </button>
-                            <button class="map-button">
-                                >
-                            </button>
-                            <button class="map-button">
-                                ^
-                            </button>
-                            <button class="map-button">
-                                ⤓
-                            </button>
-                            <canvas id="map" width="1000" height="500"></canvas>
+                    <img class="map-button" src="static/images/buttons/left.svg" data-direction="left">
+                    <img class="map-button right-button" src="static/images/buttons/left.svg" data-direction="right">
+                    <img class="map-button up-button" src="static/images/buttons/left.svg" data-direction="up">
+                    <img class="map-button down-button" src="static/images/buttons/left.svg" data-direction="down">
+                    <canvas id="map" width="1000" height="500"></canvas>
                 </li>
         </div>
         </div>

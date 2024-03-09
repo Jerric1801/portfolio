@@ -36,7 +36,7 @@
 
 @font-face {
     font-family: grotesk;
-    src: url('/static/fonts/SpaceGrotesk-Medium.otf');
+    src: url('/static/fonts/SpaceGrotesk-Regular.otf');
 }
 
 
@@ -49,7 +49,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: var(--white);
-    font-family: caviar;
+    font-family: grotesk, caviar;
   }
 
 ::-webkit-scrollbar { 
@@ -201,11 +201,7 @@ nav ul {
 #work-kanban {
     list-style-type:none;
     max-width: 1200px; 
-    max-height: 600px; /* Fixed height to limit rows */
-    /* display: grid; 
-    grid-template-rows: repeat(1, minmax(0,250px)); 
-    grid-template-columns: repeat(4, minmax(0,250px));
-    grid-gap: 20px; */
+    max-height: 600px;
     min-height:0;
     min-width:0;
     margin: 0;
@@ -265,7 +261,7 @@ nav ul {
     border-bottom: 0.4px solid var(--grey);
 }
 
-.stock_ticker {
+.stock-ticker {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -276,25 +272,25 @@ nav ul {
 }
 
     /* title */
-.stock_ticker p:first-child {
+.stock-ticker p:first-child {
     font-size: 1.1em;
     color: var(--white);
     font-weight: 1000;
 }
 
     /* description */
-.stock_ticker p:last-child {
+.stock-ticker p:last-child {
     font-size: 0.8em;
     color: var(--grey);
 }
 
-.stock_graph {
+.stock-graph {
     width: 25%;
     object-fit: cover;
     overflow: hidden;
 }
 
-    .stock_graph svg {
+    .stock-graph svg {
         width: 100%;
         height: 100%;
     }
@@ -302,18 +298,18 @@ nav ul {
 
 
 
-.stock_price {
+.stock-price {
     width: 15%;
     text-align: right;
 }
 
-.stock_price p:first-child {
+.stock-price p:first-child {
     font-size: 1.1em;
     color: var(--white);
     font-weight: 1000;
 }
 
-.stock_price p:last-child {
+.stock-price p:last-child {
     font-size: 0.8em;
     color: var(--white);
 }
@@ -321,7 +317,7 @@ nav ul {
 /* MAP WIDGET */
 
 .map-widget {
-    overflow:scroll;
+    overflow:hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,16 +331,35 @@ nav ul {
 }
 
 .map-button {
-    background-color: #222222;
+    background-color: #8a8a8a;
     position: fixed;
     width: 40px;
     height: 40px;
-    border-radius : 100%;
-    z-index: 2;
+    z-index: 3;
+    border-radius: 100%;
+    opacity: 0.3;
+}
+
+.map-button:hover {
     opacity: 0.8;
-    font-size: 2em;
-    color: white;
-    border: none;
+}
+
+.map-button:active { 
+    background-color: #f5f5f5;
+    opacity: 1;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.right-button {
+    transform: scale(-1,1);
+}
+
+.up-button {
+    transform: rotate(90deg);
+}
+
+.down-button {
+    transform: rotate(-90deg);
 }
 
 /* MOOD WIDGET */
@@ -417,6 +432,11 @@ nav ul {
     display: flex;
     align-items: center;
     position: fixed;
+    font-size: 1.2rem;
+}
+
+#popup-back:hover {
+    cursor: pointer;
 }
 
 #popup-back p{

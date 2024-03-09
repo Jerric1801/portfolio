@@ -1,22 +1,51 @@
 class Project {
+
     name;
     image_path = "./static/images/";
     images;
     desc;
+    popup = document.getElementById("works-popup")
     content = document.getElementById("popup-content");
+    backButton = document.getElementById("popup-back");
+
     constructor(name, path, images, desc) {
         this.name = name;
         this.image_path += path;
         this.images = images;
         this.desc = desc;
-        console.log(this.desc)
 
         //clear popup
         this.content.innerHTML = ""
         this.content.style.overflow = "scroll"
 
+        this.popup.style.display = "flex"
+
+        this.bind_back_button()
+        this.disableScrolling()
         this.create_title()
         this.create_layout()
+    }
+    bind_back_button() {
+        this.backButton.addEventListener("click", () => {
+            this.popup.style.display = "none"
+            this.enableScrolling()
+        })
+    }
+    disableScrolling() {
+        const popupRect = document.getElementById("works-popup").getBoundingClientRect();
+        const targetScrollX = window.scrollX + popupRect.left;
+        const targetScrollY = window.scrollY + popupRect.top; 
+    
+        // Smooth scrolling option
+        window.scrollTo({
+            top: targetScrollY,
+            left: targetScrollX,
+            behavior: 'smooth'
+        });
+        document.body.classList.add('no-scroll');
+    }
+    enableScrolling() {
+        document.body.classList.remove('no-scroll');
     }
     create_title() {
         let titleCon = document.createElement("div")
@@ -70,7 +99,16 @@ const project_mapper =
 },
 "mood": {
     "name": "mood",
-}
+},
+"gis": {
+    "name": "Derna Deluge Dorsier",
+},
+"unblock": {
+    "name": "Unblock",
+},
+"xrperience": {
+    "name": "XRperience",
+},
 }
 
 
