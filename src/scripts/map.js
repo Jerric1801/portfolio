@@ -17,6 +17,11 @@ class MapWidget {
     min_latitude = -90;
     max_latitude = 90;
 
+    offsetX;
+    offsetY;
+    movementSpeed = 5;      // Smaller movement per update
+    isMoving = false; 
+
     constructor(){
         this.canvas = document.getElementById('map')
         this.buttons = document.getElementsByClassName("map-button")
@@ -25,15 +30,17 @@ class MapWidget {
             this.ctx = this.canvas.getContext('2d')
         }
         this.build()
+        this.offsetX = 0;  // Initialize offsets
+        this.offsetY = 0;
         this.init_buttons()
     }
     init_buttons() {
         for (let index = 0 ; index < 4; index ++) {
-            var button = this.buttons[index]
-            var content = button.textContent
-            var direction = content.trim()
-            var mapWidth = 500
-            var mapHeight = 250
+            let button = this.buttons[index]
+            let content = button.textContent
+            let direction = content.trim()
+            let mapWidth = 500
+            let mapHeight = 250
             if (direction == "<"){
                 button.style.marginLeft= `-${mapWidth -25}px`
             }
@@ -46,7 +53,18 @@ class MapWidget {
             else {
                 button.style.marginTop= `${mapHeight - 50}px`
             }
-        }
+
+            //smooth animation
+            button.addEventListener('mousedown', () => { 
+                this.isMoving = true;   // Start movement on 'mousedown'
+                this.movementDirection = direction; 
+                this.startMovement();
+            });
+
+            button.addEventListener('mouseup', () => { 
+                this.isMoving = false;  // Stop movement on 'mouseup'
+            });
+            }
     }
     draw_map_background() {
         this.ctx.fillStyle = this.water_color;
@@ -81,6 +99,53 @@ class MapWidget {
         this.draw_map_background()
         this.draw_shapes()
     }
+    updateMapPosition() {        
+
+        const mapBoundary = 500; // Distance from origin
+
+        // Adjust offsetX for boundaries
+        if (this.offsetX > mapBoundary) {
+            this.offsetX = mapBoundary;
+            this.isMoving = false; 
+        } else if (this.offsetX < -mapBoundary) {
+            this.offsetX = -mapBoundary;
+            this.isMoving = false; 
+        }
+        
+        // Adjust offsetY for boundaries
+        if (this.offsetY > mapBoundary) {
+            this.offsetY = mapBoundary;
+            this.isMoving = false; 
+        } else if (this.offsetY < -mapBoundary) {
+            this.offsetY = -mapBoundary;
+            this.isMoving = false; 
+        }
+
+        this.canvas.style.transform = `translate(${this.offsetX}px, ${this.offsetY}px)`;
+    }
+    startMovement() {
+    if (!this.isMoving) return;  // Don't start if already moving
+
+    switch (this.movementDirection) {
+        case '<':
+            this.offsetX += this.movementSpeed; 
+            break;
+        case '>':
+            this.offsetX -= this.movementSpeed; // Move right
+            break;
+        case '^':
+            this.offsetY += this.movementSpeed; // Move up
+            break;
+        case '⤓':
+            this.offsetY -= this.movementSpeed; // Move down
+            break;
+        }
+
+    
+    this.updateMapPosition(document.getElementById('map')); 
+    requestAnimationFrame(this.startMovement.bind(this)); // Schedule next update
+}
+    
 }
 
 window.addEventListener("load", function() {
