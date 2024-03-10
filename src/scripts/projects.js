@@ -170,7 +170,7 @@ const project_mapper =
 "cmc": {
     "name": "CMC",
     "sections": {
-        "intro": ["mapping_buddy.png", "" ],
+        "intro": ["cmc_web.png", "" ],
         "layout_1": ["overview.png"],
         "layout_2": ["overview.png"]
     }
