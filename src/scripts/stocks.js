@@ -129,6 +129,7 @@ class stockWidget {
                 let index = this.dataset.index
                 if (index == 0 || index == 1) {
                     const project = values[index]
+                    console.log(project)
                     build_project(project)
                 }
             })

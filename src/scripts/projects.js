@@ -139,14 +139,14 @@ const project_mapper =
 "mood": {
     "name": "mood",
     "sections": {
-        "intro": ["mood_logo.png", "Year 1 SMU Module IS113 Sensors and IOT * React Native | Flask | Expo | MongoDB * Mood is a mobile application that is built to help SMU students with their mental health" ],
-        "layout_3": ["landing_page.png", "The project was "]
+        "intro": ["mood_logo.png", "Year 1 SMU Module IS113 Sensors and IOT * React Native | Flask | Expo | MongoDB * Mood is a mobile application that was developed to help students with their mental health. A user-centric experience with integrated personalisation was created to deliver timely reminders and incentives for self-care and stress management." ],
+        "layout_3": ["landing_page.png", "We understand how easy it is to get lost in work or studies, spending long stretches hunched over a screen. But staying sedentary for too long can take a toll on our well-being.  Wanting to find a way to address this, we decided to harness the technology we all carry – our smartphones. Using the phone's built-in sensors (like the accelerometer and gyroscope), we designed a system that could detect prolonged inactivity.  The app then prompts the user with gentle reminders to take breaks and offers simple activities to promote movement and mindfulness."]
     }
 },
 "gis": {
     "name": "Derna Deluge Dorsier",
     "sections": {
-        "intro": ["mapping_buddy.png", "Year 2 SMU Module SMT201 Geographical Information Systems" ],
+        "intro": ["gis_logo.png", "Year 2 SMU Module SMT201 Geographical Information Systems" ],
         "layout_1": ["overview.png"],
         "layout_2": ["overview.png"]
     }
@@ -154,7 +154,7 @@ const project_mapper =
 "unblock": {
     "name": "Unblock",
     "sections": {
-        "intro": ["mapping_buddy.png", "" ],
+        "intro": ["unblock_logo.png", "" ],
         "layout_1": ["overview.png"],
         "layout_2": ["overview.png"]
     }
@@ -162,7 +162,7 @@ const project_mapper =
 "xrperience": {
     "name": "XRperience",
     "sections": {
-        "intro": ["mapping_buddy.png", "" ],
+        "intro": ["ar_chat.png", "Developed an innovative mobile AR application using Unity, GPT3.5, Whisper API, and ElevenLabs API to enhance youth engagement with Singapore's Heritage Sites" ],
         "layout_1": ["overview.png"],
         "layout_2": ["overview.png"]
     }
@@ -178,7 +178,7 @@ const project_mapper =
 "cmpn": {
     "name": "Companion",
     "sections": {
-        "intro": ["mapping_buddy.png", "" ],
+        "intro": ["cmpn_logo.png", "" ],
         "layout_1": ["overview.png"],
         "layout_2": ["overview.png"]
     }
