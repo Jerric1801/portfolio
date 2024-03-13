@@ -82,6 +82,7 @@ p {
 }
 
 a {
+    color: var(--clubNavy);
     text-decoration: none;
 }
 
