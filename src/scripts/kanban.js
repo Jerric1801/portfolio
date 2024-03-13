@@ -110,7 +110,6 @@ class kanban {
     valid_drop(dragIndex, intersectIndex){
         //SPLIT BY ROWS, IF THE RESULTING POSITIONS HAVE 2 BIG WIDGETS IN ONE HALF - THAT ARE NOT 01 OR 56, DISALLOW
         // if (big_widgets.includes())
-        console.log(dragIndex)
         return true
     }
 }

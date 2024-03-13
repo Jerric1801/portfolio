@@ -1,27 +1,45 @@
+function enable_scrolling(){
+    document.body.classList.remove('no-scroll');
+}
+
+function disable_scrolling() {
+    const popupRect = document.getElementById("works-popup").getBoundingClientRect();
+    const targetScrollX = window.scrollX + popupRect.left;
+    const targetScrollY = window.scrollY + popupRect.top; 
+
+    // Smooth scrolling option
+    window.scrollTo({
+        top: targetScrollY,
+        left: targetScrollX,
+        behavior: 'smooth'
+    });
+    document.body.classList.add('no-scroll');
+}
+
 class Project {
     name;
     image_path = "./static/images/";
     popup = document.getElementById("works-popup")
-    content = document.getElementById("popup-content");
-    backButton = document.getElementById("popup-back");
+    content = document.createElement("div")
+    sections;
 
     constructor(name, path, sections) {
         this.name = name;
         this.image_path += path;
-
+        this.sections = sections
         //clear popup
-        this.content.innerHTML = ""
-        this.content.style.overflow = "scroll"
-
-        this.popup.style.display = "flex"
-
-        this.bind_back_button()
-        this.disableScrolling()
-        for (const key in sections) {
-            const value = sections[key]
-            let layout = value.shift()
-            this.section_router(value, layout)
+        for (const key in this.sections) {
+            const value = this.sections[key]
+            let layout = value[0]
+            console.log(layout)
+            this.section_router(value.slice(1), layout)
         }
+    }
+    get_name() {
+        return this.name
+    }
+    get_content() {
+        return this.content
     }
     section_router(value, key) {
         if (key == "intro"){
@@ -48,28 +66,6 @@ class Project {
         else if (key == "link_box") {
             this.create_link(value)
         }
-    }
-    bind_back_button() {
-        this.backButton.addEventListener("click", () => {
-            this.popup.style.display = "none"
-            this.enableScrolling()
-        })
-    }
-    disableScrolling() {
-        const popupRect = document.getElementById("works-popup").getBoundingClientRect();
-        const targetScrollX = window.scrollX + popupRect.left;
-        const targetScrollY = window.scrollY + popupRect.top; 
-    
-        // Smooth scrolling option
-        window.scrollTo({
-            top: targetScrollY,
-            left: targetScrollX,
-            behavior: 'smooth'
-        });
-        document.body.classList.add('no-scroll');
-    }
-    enableScrolling() {
-        document.body.classList.remove('no-scroll');
     }
     create_title() {
         let titleCon = document.createElement("div")
@@ -143,9 +139,9 @@ class Project {
 
         projectCon.append(imageItem)
         projectCon.append(descItem)
-
         this.content.append(projectCon)
     }
+
 }
 
 const project_mapper = 
@@ -155,7 +151,7 @@ const project_mapper =
         "1": ["intro", "mapping_buddy.png", "Year 2 SMU Module IS211 Interaction Design Prototyping * HTML | CSS | Javascript | Jquery UI * Frustrated with unintuitive tools and scattered information, SMU students struggle to effectively plan their modules. My team designed Mapping Buddy, a web application that simplifies course sequence planning. It offers a streamlined user experience, potentially saving students countless hours of hassle" ],
         "2": ["layout_1","overview.png"], 
         "3": ["layout_2","CU.png" , "We were initially tasked with creating Figma designs, but we recognized the potential to enhance the prototype's functionality and user experience. We incorporated jQuery UI to implement a dynamic Kanban board, a key component of the design. Despite the technical complexity and a tight 3-4 week deadline, we successfully delivered a more interactive and realistic prototype. This prototype included functionality such as a CU tracker, tabs and module search"],
-        "link_box": "https://mappingbuddy.netlify.app/"
+        "4": ["link_box","https://mappingbuddy.netlify.app/"]
     }
 },
 "birthin": {
@@ -163,7 +159,7 @@ const project_mapper =
     "sections": {
         "1": ["intro","birthin.png", "Passion Project * Entrepreneurship | Branding | Web Design * Artisanal Elevation. A focus on branding, web design & development, and all things else in helping you build your online presence. \n Birthin Co. was created to craft unique identities that make businesses stand out. As a Web Designer and Developer for this budding start-up, my aim is to be an artisan in the competitive world of B2B. I strive to create fully customizable pages that are built from scratch, to create functionality and personality in each project." ],
         "2": ["layout_1","birthin_mockup.png"], 
-        "link_box": ["link_box","https://birthin.co/"]
+        "3": ["link_box","https://birthin.co/"]
     }
 },
 "mood": {
@@ -188,7 +184,7 @@ const project_mapper =
         "1": ["intro","unblock_logo.png", "PSA CodeSprint Hackathon Oct 2023 * Blockchain | Flask | Machine Learning * Our solution is marketed as a tool that employs models to make the berthing process more efficient and blockchain technology to make the process visible to all stakeholders. Our solution can be used by all stakeholders to make informed decisions for shipping to reduce congestion, prevent waste of resources and lower costs."],
         "2": ["layout_1","homepage.png"],
         "3": ["layout_2","blockchain.png", "How it works: Our solution utilises blockchain technology to share data which was used to train a seasonal AI model to forecast port availability in the future. Next, companies can enter details for their shipment. Our model will then provide recommendations on which ports are best suited to your needs (table below shows an example of how blockchains are stored)"],
-        "link_box": "https://www.youtube.com/watch?v=bUcWCzstblc"
+        "4": ["link_box","https://www.youtube.com/watch?v=bUcWCzstblc"]
     }
 },
 "xrperience": {
@@ -197,7 +193,7 @@ const project_mapper =
         "1": ["intro","ar_chat.png", "DSTA Brainhack Hackathon XRperience June 2023 * Unity | C# | Blender | OpenAI api | ElevenLabs api * Developed an innovative mobile AR application using Unity, GPT3.5, Whisper API, and ElevenLabs API to enhance youth engagement with Singapore's Heritage Sites" ],
         "2": ["layout_1","functionality.png"],
         "3": ["layout_2","works.png", "How it works: The user can record a prompt to ask the Heritage Mascot. In this case we used Sang Nila Utama as our mascot. We then utilise Open AI Whisper api to convert the speech to text. After conversion, we engineer the prompt and pass the text into the GPT3.5 api. The response is then sent to ElevenLabs api to convert it back to speech."],
-        "4": ["layout_3","demo.mp4"]
+        "4": ["layout_3","demo.mp4", "This is a sample of our demo in works"]
     }
 },
 "cmc": {
@@ -213,25 +209,37 @@ const project_mapper =
 "cmpn": {
     "name": "Companion",
     "sections": {
-        "1": ["intro","cmpn_logo.png", "Passion Project * Flask | mySQL | Jinjja | TigerTrade API | Trading View * Companion is a personal project that I have built to help me better manage my own finances. " ],
-        "2": ["layout_1","dashboard.png"],
-        "3": ["layout_2","", "Using my brokerage, Tiger Trade API, I called my stock"],
+        "1": ["intro","cmpn_logo.png", "Passion Project * Flask | mySQL | TigerTrade API | Trading View & Bokeh | Alpha Vantage API * Companion is my personal finance management platform that centralizes investments across multiple brokerages. This provides me with a consolidated macro view for easier management and facilitates data-driven decision-making. My goal is to integrate machine learning for automated insights and income generation strategies." ],
+        "2": ["layout_1","dashboard.png"]
     }
 }
 }
 
+let projects = {}
 
-export function build_project(attr) {
-    try{
-        let project_info = project_mapper[attr]
-        new Project(project_info["name"], attr, project_info["sections"])
-
-    }
-    catch {
-        console.log("Error in project.js")
-    }
+export function build_project(projectName) {
+    const selected = projects[projectName]
+    const popup =  document.getElementById("works-popup");
+    const contentContainer = document.getElementById("popup-content");
+    const content = selected.get_content()
+    contentContainer.innerHTML = ""
+    contentContainer.append(content)
+    popup.style.display = "flex"
+    disable_scrolling()
 }
 
 $(window).on("load", function() {
-    document.getElementById("#popup-content")
+    const popup =  document.getElementById("works-popup");
+    const backButton = document.getElementById("popup-back");
+    backButton.addEventListener("click", () => {
+        popup.style.display = "none"
+        enable_scrolling()
+    })
+
+    for (const key in project_mapper){
+        const project_info = project_mapper[key]
+        console.log(project_info)
+        projects[key] = new Project(project_info["name"], key, project_info["sections"])
+    }
+    console.log(projects)
 })
