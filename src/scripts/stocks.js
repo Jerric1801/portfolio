@@ -133,6 +133,19 @@ class stockWidget {
                     build_project(project)
                 }
             })
+            stock.addEventListener("mouseover", function() {
+                let index = this.dataset.index
+                if (index == 0 || index == 1) {
+                    this.classList.add('find-out-cursor');
+                }
+            })
+
+            stock.addEventListener("mouseout", function() {
+                let index = this.dataset.index
+                if (index == 0 || index == 1) {
+                    this.classList.remove('find-out-cursor');
+                }
+            })
         }
     }
 }

@@ -39,7 +39,9 @@
     src: url('/static/fonts/SpaceGrotesk-Regular.otf');
 }
 
-
+.find-out-cursor {
+    cursor: url('/static/images/find.svg'), pointer; 
+}
 
 /* ----------------------------------------
    TAGS
@@ -228,6 +230,10 @@ nav ul {
     grid-column: span 2;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     /* box-shadow: inset 0px 0px 0px 2px black; */
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
 
 .square-widget {
@@ -236,6 +242,14 @@ nav ul {
     border-radius: 20px;
     background-color: #2A3B49;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    /* cursor: move;
+    cursor: grab; */
+}
+
+.square-widget:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 
 .square-widget img {
@@ -262,10 +276,6 @@ nav ul {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.stock:hover {
-    cursor: pointer;
 }
 
 .stock:not(:last-child) {

@@ -46,6 +46,14 @@ class kanban {
                 let project = $(this).attr("data-project")
                 build_project(project)
             })
+
+            $(item).on("mouseover", function() {
+                $(this).addClass('find-out-cursor');
+            })
+
+            $(item).on("mouseout", function() {
+                $(this).removeClass('find-out-cursor');
+            })
         }
     }
     apply_drag(drag_item) {
