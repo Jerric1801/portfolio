@@ -1,16 +1,16 @@
-## My Developer Portfolio 
+# Jerric's Portfolio 👨🏼‍💻
 
-**Overview**
-A curated portfolio showcasing my development projects, skills, and experience. I'm a Singapore-based student pursuing a Bachelor of Science in Information Systems, specializing in Smart City technology. 
+**Welcome!** 👋 
 
-**🗨️ Find Out More**
-https://jerric-chan.netlify.app/
+This portfolio is a showcase of my journey. I'm Jerric, a Singapore-based student pursuing a Bachelor of Science in Information Systems, specializing in Smart City Technology. 
 
-**🔨 Built With**
-* HTML
-* CSS
-* Javascript
-* Netlify (Hosting)
+**Explore My Portfolio** 🚀 ＠
+[jerric.fun](jerric.fun)
 
-**Contact**
-* Email: jerric1801@gmail.com
+**Let's Connect!** ☕
+
+* **Email:** jerric1801@gmail.com
+* **LinkedIn:** [jerric-chan](https://www.linkedin.com/in/jerric-chan-82839a248)
+* **Github:** [jerric1801](https://github.com/Jerric1801)
+
+
