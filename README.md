@@ -5,7 +5,7 @@
 This portfolio is a showcase of my journey. I'm Jerric, a Singapore-based student pursuing a Bachelor of Science in Information Systems, specializing in Smart City Technology. 
 
 **Explore My Portfolio** 🚀 ＠
-[jerric.fun](jerric.fun)
+[jerric.fun](https://jerric.fun)
 
 **Let's Connect!** ☕
 
