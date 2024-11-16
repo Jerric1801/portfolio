@@ -1,6 +1,6 @@
-import {build_project} from "./projects.js";
+import {build_project} from "../../projects/projects.js";
 
-class MapWidget {
+export class mapWidget {
     //canvas settings
     water_color = "#2A3B49"
     canvas_width = 1000;
@@ -193,6 +193,3 @@ class MapWidget {
     }
 }
 
-window.addEventListener("load", function () {
-    new MapWidget()
-})

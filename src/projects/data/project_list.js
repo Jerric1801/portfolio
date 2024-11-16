@@ -1,4 +1,5 @@
-export const project_mapper = {"mapping_buddy": {
+export const project_mapper = {
+"mapping_buddy": {
     "name": "Mapping Buddy",
     "sections": {
         "1": ["intro", "mapping_buddy.png", "Year 2 SMU Module IS211 Interaction Design Prototyping * HTML | CSS | Javascript | Jquery UI * Frustrated with unintuitive tools and scattered information, SMU students struggle to effectively plan their modules. My team designed Mapping Buddy, a web application that simplifies course sequence planning. It offers a streamlined user experience, potentially saving students countless hours of hassle" ],

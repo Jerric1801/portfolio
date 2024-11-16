@@ -1,7 +1,6 @@
-import { build_project } from "./projects.js";
-// stock widget
+import { build_project } from "../../projects/projects.js";
 
-class stockWidget {
+export class stockWidget {
     stock = document.getElementById("stocks")
 
     stock_items = {
@@ -150,6 +149,3 @@ class stockWidget {
     }
 }
 
-$(window).on("load", function() {
-    new stockWidget()
-})

@@ -1,6 +1,5 @@
-import { project_mapper } from '../assets/project_list.js'
+import { project_mapper } from './data/project_list.js'
 
-console.log(project_mapper)
 
 function enable_scrolling(){
     document.body.classList.remove('no-scroll');
@@ -35,7 +34,6 @@ class Project {
         for (const key in this.sections) {
             const value = this.sections[key]
             let layout = value[0]
-            console.log(layout)
             this.section_router(value.slice(1), layout)
         }
     }
@@ -174,8 +172,6 @@ $(window).on("load", function() {
 
     for (const key in project_mapper){
         const project_info = project_mapper[key]
-        console.log(project_info)
         projects[key] = new Project(project_info["name"], key, project_info["sections"])
     }
-    console.log(projects)
 })

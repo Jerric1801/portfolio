@@ -1,31 +1,20 @@
-import { build_project } from "./projects.js";
+import { build_project } from "../projects/projects.js";
+import {hasClassInArray} from "../utils/utils.js"
+import {mapWidget} from '../widgets/home/map.js';
+import {stockWidget} from '../widgets/home/stocks.js';
 
-function calculateIntersectionArea(rect1, rect2) {
-    const xOverlap = Math.max(0, Math.min(rect1.left + rect1.width, rect2.left + rect2.width) - Math.max(rect1.left, rect2.left));
-    const yOverlap = Math.max(0, Math.min(rect1.top + rect1.height, rect2.top + rect2.height) - Math.max(rect1.top, rect2.top));
-    const overlapArea = xOverlap * yOverlap;
-    return overlapArea;
-}
-
-function hasClassInArray(item, classArray) {
-    // Use the classList property to access an item's classes
-    for (const className of item.classList) {
-        if (classArray.includes(className)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-class kanban {
+export class home {
     big_widgets = ["map-widget", "stock-widget"];
 
     constructor() {
         this.draggables = $(".draggable"); 
         this.bind_click(); 
+        this.init_widgets();
     }
-
+    init_widgets() {
+        new mapWidget();
+        new stockWidget();
+    }
     bind_click() {
         this.draggables.each((index, item) => {
             //binds only small widgets
@@ -47,7 +36,3 @@ class kanban {
         });
     }
 }
-
-$(window).on("load", function () {
-    new kanban();
-});
