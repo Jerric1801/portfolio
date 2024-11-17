@@ -1,25 +1,4 @@
-import { project_mapper } from './data/project_list.js'
-
-
-function enable_scrolling(){
-    document.body.classList.remove('no-scroll');
-}
-
-function disable_scrolling() {
-    const popupRect = document.getElementById("works-popup").getBoundingClientRect();
-    const targetScrollX = window.scrollX + popupRect.left;
-    const targetScrollY = window.scrollY + popupRect.top; 
-
-    // Smooth scrolling option
-    window.scrollTo({
-        top: targetScrollY,
-        left: targetScrollX,
-        behavior: 'smooth'
-    });
-    document.body.classList.add('no-scroll');
-}
-
-class Project {
+export class Project {
     name;
     image_path = "./static/images/";
     popup = document.getElementById("works-popup")
@@ -149,29 +128,5 @@ class Project {
 
 }
 
-let projects = {}
 
-export function build_project(projectName) {
-    const selected = projects[projectName]
-    const popup =  document.getElementById("works-popup");
-    const contentContainer = document.getElementById("popup-content");
-    const content = selected.get_content()
-    contentContainer.innerHTML = ""
-    contentContainer.append(content)
-    popup.style.display = "flex"
-    disable_scrolling()
-}
 
-$(window).on("load", function() {
-    const popup =  document.getElementById("works-popup");
-    const backButton = document.getElementById("popup-back");
-    backButton.addEventListener("click", () => {
-        popup.style.display = "none"
-        enable_scrolling()
-    })
-
-    for (const key in project_mapper){
-        const project_info = project_mapper[key]
-        projects[key] = new Project(project_info["name"], key, project_info["sections"])
-    }
-})

@@ -14,3 +14,21 @@ export function hasClassInArray(item, classArray) {
     }
     return false;
 }
+
+export function enable_scrolling(){
+    document.body.classList.remove('no-scroll');
+}
+
+export function disable_scrolling() {
+    const popupRect = document.getElementById("works-popup").getBoundingClientRect();
+    const targetScrollX = window.scrollX + popupRect.left;
+    const targetScrollY = window.scrollY + popupRect.top; 
+
+    // Smooth scrolling option
+    window.scrollTo({
+        top: targetScrollY,
+        left: targetScrollX,
+        behavior: 'smooth'
+    });
+    document.body.classList.add('no-scroll');
+}

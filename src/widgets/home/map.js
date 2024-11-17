@@ -1,4 +1,4 @@
-import {build_project} from "../../projects/projects.js";
+import {build_project} from "../../projects/widgets.js";
 
 export class mapWidget {
     //canvas settings
